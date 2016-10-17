@@ -10,32 +10,32 @@ import org.testng.annotations.*;
 public class Lesson3 {
 
     @BeforeClass
-    public void beforeClass(){
+    public void beforeClass() {
         System.out.println("Before class");
     }
 
     @BeforeSuite
-    public void beforeSuite(){
+    public void beforeSuite() {
         System.out.println("Before suite");
     }
 
     @AfterSuite
-    public void afterSuite(){
+    public void afterSuite() {
         System.out.println("After suite");
     }
 
     @AfterClass
-    public void afterClass(){
+    public void afterClass() {
         System.out.println("After class");
     }
 
     @BeforeGroups
-    public void beforeGroups(){
+    public void beforeGroups() {
         System.out.println("Before groups");
     }
 
     @Test(groups = "No", dataProviderClass = Datas.class, dataProvider = "testA")
-    public void testA(boolean b, String s, int i, Object o){
+    public void testA(boolean b, String s, int i, Object o) {
         System.out.println("test A bool = " + b +
                 " string = " + s +
                 " int = " + i +
@@ -49,12 +49,12 @@ public class Lesson3 {
     }
 
     @Test()
-    public void testC_1(){
+    public void testC_1() {
         System.out.println("test C1");
     }
 
     @Test(groups = "group C", dependsOnMethods = "testC_1")
-    public void testC_2(){
+    public void testC_2() {
         System.out.println("test C2");
     }
 }

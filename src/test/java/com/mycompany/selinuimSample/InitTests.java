@@ -1,11 +1,13 @@
 package com.mycompany.selinuimSample;
 
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.MarionetteDriverManager;
 import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.MarionetteDriver;
 
 import static java.lang.System.setProperty;
 
@@ -13,21 +15,22 @@ public class InitTests {
     protected WebDriver driver;
 
     @BeforeClass
-    public static void setupClass(){
-        setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
-        MarionetteDriverManager.getInstance().setup();
+    public static void setupClass() {
+        //setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe"); // old way without https://github.com/bonigarcia/webdrivermanager
+        //MarionetteDriverManager.getInstance().setup();
+        ChromeDriverManager.getInstance().setup();
     }
 
     @Before
-    public void setupTest(){
-//        driver = new MarionetteDriver();
+    public void setupTest() {
+        //driver = new MarionetteDriver();
         driver = new ChromeDriver();
         driver.navigate().to("https://jdi-framework.github.io/tests");
         driver.manage().window().maximize();
     }
 
     @Test
-    public void LoginTest(){
+    public void LoginTest() {
         WebElement loginIcon = driver.findElement(By.cssSelector(".profile-photo"));
         WebElement userField = driver.findElement(By.id("Login"));
         WebElement passwordField = driver.findElement(By.id("Password"));
@@ -44,7 +47,7 @@ public class InitTests {
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         if (driver != null) {
             driver.close();
         }
