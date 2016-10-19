@@ -1,4 +1,4 @@
-package com.epam.controls;
+package com.epam.pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,8 +9,9 @@ import org.openqa.selenium.WebElement;
  */
 public class Element {
 
-    protected By _locator;
-    protected WebDriver _driver;
+    private By _locator;
+    private WebDriver _driver;
+    private WebElement _element;
 
     public Element(WebDriver driver, By locator) {
         _driver = driver;
