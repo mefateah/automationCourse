@@ -1,4 +1,4 @@
-package com.mycompany.selinuimSample;
+package com.epam.lessons;
 
 import org.testng.annotations.DataProvider;
 

@@ -3,7 +3,7 @@
 <suite name="TestNGExamples">
     <test name="Lesson3" >
         <classes>
-            <class name="com.mycompany.selinuimSample.Lesson3" />
+            <class name="com.epam.lessons.Lesson3" />
         </classes>
     </test>
 </suite>

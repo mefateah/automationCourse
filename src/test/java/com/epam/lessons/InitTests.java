@@ -1,15 +1,11 @@
-package com.mycompany.selinuimSample;
+package com.epam.lessons;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
-import io.github.bonigarcia.wdm.MarionetteDriverManager;
 import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.MarionetteDriver;
-
-import static java.lang.System.setProperty;
 
 public class InitTests {
     protected WebDriver driver;
