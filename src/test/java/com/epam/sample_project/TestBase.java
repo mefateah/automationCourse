@@ -2,9 +2,9 @@ package com.epam.sample_project;
 
 import com.epam.page_objects.TestSite;
 import com.epam.page_objects.pages.HomePage;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.MarionetteDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.MarionetteDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -22,8 +22,9 @@ public class TestBase {
     @BeforeClass
     public void beforeClass(){
         System.out.println("before class");
-        ChromeDriverManager.getInstance().setup();
-        driver = new ChromeDriver();
+//        ChromeDriverManager.getInstance().setup();
+        MarionetteDriverManager.getInstance().setup();
+        driver = new MarionetteDriver();
         driver.manage().window().maximize();
         HomePage homePage = getSite().getHomePage();
         homePage.open();
@@ -41,7 +42,7 @@ public class TestBase {
     public void afterClass(){
         System.out.println("after class - Close web driver");
         if (driver != null){
-            driver.close();
+            driver.quit();
         }
     }
 }
